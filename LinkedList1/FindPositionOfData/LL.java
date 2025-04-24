@@ -35,9 +35,7 @@ public class LL {
     // Method to find the position of a given value in the linked list
     // Returns the 0-based index or -1 if not found
     public static int FindPosition(Node<Integer> head, int Data) {
-        if (head == null) {
-            return -1; // If list is empty, return -1
-        }
+      
 
         int count = 0;
         Node<Integer> temp = head;

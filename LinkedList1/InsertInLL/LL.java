@@ -50,7 +50,8 @@ public class LL {
         
             Node<Integer> Previous = head;
             for (int i = 0; i < pos - 1; i++) {
-                if (Previous == null) return head; // position is out of bounds
+                if (Previous == null) 
+                return head; // position is out of bounds
                 Previous = Previous.next;
             }
         
