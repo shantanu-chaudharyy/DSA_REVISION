@@ -4,16 +4,6 @@ import java.util.Scanner;
 
 public class LL {
 
-    // Node class
-    static class Node<T> {
-        T data;
-        Node<T> next;
-
-        Node(T data) {
-            this.data = data;
-        }
-    }
-
     // Function to take input from user
     public static Node<Integer> TakeInput() {
         Scanner s = new Scanner(System.in);
