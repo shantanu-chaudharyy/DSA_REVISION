@@ -1,4 +1,4 @@
-package LinkedList1.CheckPalindrome;
+package Rough;
 
 import java.util.Scanner;
 
@@ -43,16 +43,20 @@ public class LL {
 
     // ✅ Function to check if linked list is a palindrome
     public static boolean isPalindrome(Node<Integer> head) {
-        Node<Integer> reversed = reverseCopy(head);
-    
-        while (head != null && reversed != null) {
-            if (head.data != reversed.data) {
+       
+        // reverseCopy(head) is pre-made library which reverse the linkedlist
+        Node<Integer> Reverse = reverseCopy(head);
+
+        while(head != null && Reverse != null) {
+
+            if(!head.data.equals(Reverse.data)) {
+
                 return false;
+
             }
             head = head.next;
-            reversed = reversed.next;
+            Reverse = Reverse.next;
         }
-    
         return true;
     }
     // ✅ Main method
