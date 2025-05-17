@@ -26,9 +26,9 @@ public class LL {
 
      public static Node<Integer> midPoint(Node<Integer> head) {
      
-        if(head.next == null) {
+        if(head == null && head.next == null) {
 
-            System.out.println(" ");
+           return head;
         }
         Node<Integer> slow = head;
         Node<Integer> fast = head;

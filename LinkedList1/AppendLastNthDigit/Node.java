@@ -3,10 +3,10 @@ package LinkedList1.AppendLastNthDigit;
 public class Node<T> {
 
     
-    int data;
-    Node next;
+    public int data;
+    public Node next;
 
-    Node(int data) {
+    public Node(int data) {
         this.data = data;
         this.next = null;
     }

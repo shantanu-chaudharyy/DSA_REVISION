@@ -1,13 +1,14 @@
-package Rough;
+package LinkedList2.MidpointOfLL;
 
 public class Node<T> {
+
     
-    T data ;
-    Node<T> next;
+    int data;
+    Node next;
 
-    Node(T data) {
-
+    Node(int data) {
         this.data = data;
-        next = null;
+        this.next = null;
     }
 }
+
