@@ -1,12 +1,9 @@
-package Rough;
+package LinkedList2.PrintLLRecursive;
 
 import java.util.Scanner;
 
-
 public class LL {
-
-    
-        public static Node<Integer> takeInput() {
+    public static Node<Integer> takeInput() {
             Scanner s = new Scanner(System.in);
             int data = s.nextInt();
     
@@ -25,19 +22,21 @@ public class LL {
             }
             return head;
         }
-        public static void PrintLL(Node<Integer> head) {
 
-          if(head == null) {
-            return ;
-          }
-          System.out.print(head.data + " ");
-          PrintLL(head.next);
-         
+        public static void PrintLLRecursive(Node<Integer> head) {
+
+            if(head == null) {
+                return;
+            }
+
+            System.out.print(head.data + " ");
+            PrintLLRecursive(head.next);
+            return;
         }
-   
-    public static void main(String[] args) {
-      Node<Integer> head = takeInput();
-    
-      PrintLL(head);
-  }
+
+        public static void main(String[] args) {
+            
+            Node<Integer> head = takeInput();
+            PrintLLRecursive(head);
+        }
 }

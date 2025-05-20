@@ -1,12 +1,10 @@
-package Rough;
+package LinkedList2.ReverseLLRecursive;
 
 import java.util.Scanner;
 
-
 public class LL {
-
     
-        public static Node<Integer> takeInput() {
+  public static Node<Integer> takeInput() {
             Scanner s = new Scanner(System.in);
             int data = s.nextInt();
     
@@ -24,20 +22,19 @@ public class LL {
                 data = s.nextInt();
             }
             return head;
-        }
+        }  
+
         public static void PrintLL(Node<Integer> head) {
 
-          if(head == null) {
-            return ;
-          }
-          System.out.print(head.data + " ");
-          PrintLL(head.next);
-         
+            if(head == null) {
+                return;
+            }
+            PrintLL(head.next);
+            System.out.print(head.data + " ");
         }
-   
-    public static void main(String[] args) {
-      Node<Integer> head = takeInput();
-    
-      PrintLL(head);
-  }
+        public static void main(String[] args) {
+            
+            Node<Integer> head = takeInput();
+            PrintLL(head);
+        }
 }

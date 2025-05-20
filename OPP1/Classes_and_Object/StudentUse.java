@@ -9,6 +9,10 @@ public class StudentUse {
       s1.Name = "Akash";
       s1.Roll = 15;
 
+      Student s2 = new Student();
+      s2.Name = "Shantanu";
+      s1.Roll = 12;
+
       System.out.println(s1.Name);
       System.out.println(s1.Roll);
     }

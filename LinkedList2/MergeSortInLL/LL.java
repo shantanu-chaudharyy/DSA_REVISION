@@ -29,7 +29,7 @@
         }
 
         // Step 2: Find middle node using slow and fast pointers
-        public static Node<Integer> FindMid(Node<Integer> head) {
+        public static Node<Integer> FindMid(Node<Integer> head) { //
             Node<Integer> slow = head;
             Node<Integer> fast = head;
 
@@ -57,6 +57,7 @@
 
             // Traverse both lists and merge by comparing data
             while(left != null && right != null) {
+
                 if(left.data <= right.data) {
                     tail.next = left;
                     tail = left;
@@ -100,7 +101,7 @@
             // Recursive calls to sort both halves
             left = MergeSort(left);
             right = MergeSort(right);
-
+ 
             // Merge sorted halves and return
             Node<Integer> result = merge(left , right);
             return result;
@@ -114,7 +115,8 @@
             System.out.println();
         }
         public static void main(String[] args) {
-            Node<Integer> head = takeInput();      // Create list from user input
+            Node<Integer> head = takeInput(); 
+                 // Create list from user input
             head = MergeSort(head);                // Sort the list using merge sort
             printList(head);                       // Print sorted list
         }
