@@ -1,4 +1,4 @@
-package LinkedList2.InsertElementRecursive;
+package LinkedList2.DeleteNodeRecursively;
 
 import java.util.Scanner;
 
@@ -22,36 +22,36 @@ public class LL {
             }
             return head;
         }
-        public static Node<Integer> PrintLL(Node<Integer> head ,int pos , int ele) {
-            if (pos < 0) return head; // invalid position
-        
-            if (pos == 0) {
-                Node<Integer> Newnode = new Node<>(ele);
-                Newnode.next = head;
-                return Newnode;
+
+        public static Node<Integer> deleteNodeRec(Node<Integer> head, int pos) {
+            // Base case: if head is null, return null
+            if (head == null) {
+                return null;
             }
-        
-            // Edge case fix:
-            if (head == null) return head;
-        
-            head.next = PrintLL(head.next , pos - 1, ele);
+    
+            // If position is 0, remove the current node
+            if (pos == 0) {
+                return head.next;
+            }
+    
+            // Recursive call on the next node
+            head.next = deleteNodeRec(head.next, pos - 1);
+    
             return head;
-        }
-        public static void Print(Node<Integer> head) {
-            while(head != null) {
+        } 
+    
+        public static void main(String[] args) {
+            Scanner scan = new Scanner(System.in);
+            Node<Integer> head = takeInput();
+            int pos = scan.nextInt();
+    
+            // Update head with the result of deleteNodeRec
+            head = deleteNodeRec(head, pos);
+    
+            // Print the linked list
+            while (head != null) {
                 System.out.print(head.data + " ");
                 head = head.next;
             }
         }
-        public static void main(String[] args) {
-            Scanner scan = new Scanner(System.in);
-           
-        
-            Node<Integer> head = takeInput();
-            int pos = scan.nextInt();
-            int ele = scan.nextInt();
-        
-            head = PrintLL(head , pos , ele);  // fix: capture the returned head
-            Print(head);
-        }
-    }        
+    }
