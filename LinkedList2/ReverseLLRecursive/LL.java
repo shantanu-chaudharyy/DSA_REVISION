@@ -24,17 +24,29 @@ public class LL {
             return head;
         }  
 
-        public static void PrintLL(Node<Integer> head) {
+        public static Node<Integer> PrintLL(Node<Integer> head) {
 
-            if(head == null) {
-                return;
+            if(head == null || head.next == null) {
+                return head;
             }
-            PrintLL(head.next);
-            System.out.print(head.data + " ");
+            Node<Integer> NewNode = PrintLL(head.next);
+            
+            Node<Integer> headNext = head.next;
+            headNext.next = head;
+            head.next = null;
+
+            return NewNode;
         }
         public static void main(String[] args) {
             
             Node<Integer> head = takeInput();
-            PrintLL(head);
+            head = PrintLL(head);
+
+            while(head != null) {
+
+                System.out.print(head.data + " ");
+                head = head.next;
+            }
+
         }
 }
